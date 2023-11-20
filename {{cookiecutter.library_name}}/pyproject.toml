@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "meltano-{{ cookiecutter.scheme }}-state-backend"
+name = "{{ cookiecutter.library_name.replace('_','-') }}"
 description = "A Meltano State Backend for {{ cookiecutter.backend }}"
 version = "0.0.1"
-authors = ["{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>"]
+authors = ["{{ cookiecutter.admin_name }} <{{ cookiecutter.admin_email }}>"]
 
 [tool.poetry.dependencies]
 meltano = { git = "https://github.com/meltano/meltano.git", branch = "state-backend-plugins" }
@@ -12,4 +12,4 @@ requires = ["poetry-core==1.7.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.plugins."meltano.state_backends"]
-"{{ cookiecutter.scheme }}" = "{{ cookiecutter.directory_name }}.{{ cookiecutter.scheme }}:{{ cookiecutter.backend }}StateStoreManager"
+"{{ cookiecutter.scheme }}" = "{{ cookiecutter.library_name }}.{{ cookiecutter.scheme }}:{{ cookiecutter.backend }}StateStoreManager"

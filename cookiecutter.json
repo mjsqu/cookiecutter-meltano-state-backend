@@ -1,0 +1,13 @@
+{
+    "scheme": "SchemeName",
+    "library_name": "meltano_{{ cookiecutter.scheme }}_state_backend",
+    "backend": "State",
+    "admin_name": "FirstName LastName",
+    "admin_email": "firstname.lastname@example.com",
+    "__prompts__": {
+        "scheme": "Typically an identifier at the start of a URI/Connection String",
+        "backend": "A label for the backend",
+        "admin_name": "Provide your [bold yellow]full name[/]",
+        "admin_email": "Provide your [bold yellow]email[/]"
+    }
+}
