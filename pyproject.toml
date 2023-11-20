@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "meltano-{{ cookiecutter.scheme }}-state-backend"
+description = "A Meltano State Backend for {{ cookiecutter.backend }}"
+version = "0.0.1"
+authors = ["{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>"]
+
+[tool.poetry.dependencies]
+meltano = { git = "https://github.com/meltano/meltano.git", branch = "state-backend-plugins" }
+
+[build-system]
+requires = ["poetry-core==1.7.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins."meltano.state_backends"]
+"{{ cookiecutter.scheme }}" = "{{ cookiecutter.directory_name }}.{{ cookiecutter.scheme }}:{{ cookiecutter.backend }}StateStoreManager"
